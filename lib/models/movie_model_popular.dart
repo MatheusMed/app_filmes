@@ -43,7 +43,7 @@ class Results {
     required this.popularity,
     required this.voteCount,
     required this.video,
-    required this.voteAverage,
+    // required this.voteAverage,
   });
   late final String posterPath;
   late final bool adult;
@@ -58,7 +58,7 @@ class Results {
   late final double popularity;
   late final int voteCount;
   late final bool video;
-  late final double voteAverage;
+  // late final double voteAverage;
 
   Results.fromJson(Map<String, dynamic> json) {
     posterPath = json['poster_path'];
@@ -74,7 +74,7 @@ class Results {
     popularity = json['popularity'];
     voteCount = json['vote_count'];
     video = json['video'];
-    voteAverage = json['vote_average'];
+    // voteAverage = json['vote_average'];
   }
 
   Map<String, dynamic> toJson() {
@@ -92,7 +92,7 @@ class Results {
     _data['popularity'] = popularity;
     _data['vote_count'] = voteCount;
     _data['video'] = video;
-    _data['vote_average'] = voteAverage;
+    // _data['vote_average'] = voteAverage;
     return _data;
   }
 }

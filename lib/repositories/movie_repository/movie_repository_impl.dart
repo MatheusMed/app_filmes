@@ -13,7 +13,7 @@ class MovieRepositoryImpl implements MovieRepository {
   Future<MovieModelPopular> getPopularMovies() async {
     var result = await _dioServices
         .getDio()
-        .get('movie/popular?api_key=$kKey&language=pt-BR&page=1');
+        .get('movie/popular?api_key=$kKey&language=pt-BR');
     print(result.data);
     return MovieModelPopular.fromJson(result.data);
   }

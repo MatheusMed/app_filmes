@@ -20,8 +20,9 @@ class MovieRepositoryImpl implements MovieRepository {
 
   @override
   Future<MovieGenre> getGenres() async {
-    var result =
-        await _dioServices.getDio().get('/genre/movie/list?api_key=$kKey');
+    var result = await _dioServices
+        .getDio()
+        .get('/genre/movie/list?api_key=$kKey&language=pt-BR');
     print(result.data);
     return MovieGenre.fromJson(result.data);
   }

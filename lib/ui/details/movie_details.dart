@@ -72,6 +72,45 @@ class MovieDetails extends StatelessWidget {
           progressIndicatorBuilder: (context, url, downloadProgress) =>
               CircularProgressIndicator(value: downloadProgress.progress),
         ),
+        SizedBox(height: 10),
+        Text(
+          movie!.title,
+          style: TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        Text(movie!.originalTitle),
+        SizedBox(height: 10),
+        Container(
+          height: 50,
+          width: 80,
+          decoration: BoxDecoration(
+            color: Color(0xffF1F3F5),
+            borderRadius: BorderRadius.circular(30),
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Text('Ano:', style: TextStyle(color: Colors.black)),
+              Text(movie!.releaseDate.substring(0, 4)),
+            ],
+          ),
+        ),
+        SizedBox(height: 10),
+        Text.rich(
+          TextSpan(
+              text: 'Descrição \n \n',
+              style: TextStyle(fontSize: 20, color: Color(0xff5E6770)),
+              children: [
+                TextSpan(
+                    text: movie!.overview,
+                    style: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.w600,
+                    )),
+              ]),
+        ),
       ],
     );
   }
